@@ -2,7 +2,7 @@
 //  ModelViewController.m
 //  SHInterfaceRotation
 //
-//  Created by CSH on 2017/7/19.
+//  Created by CSH on 2017/12/11.
 //  Copyright © 2017年 CSH. All rights reserved.
 //
 
@@ -20,14 +20,24 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)btnClick:(id)sender {
     NSLog(@"旋转");
     
-    [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
+    //支持旋转
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    app.isRotation = YES;
+    
+    [self interfaceOrientation:UIInterfaceOrientationLandscapeLeft];
 }
 
 - (void)interfaceOrientation:(UIInterfaceOrientation)orientation
@@ -45,35 +55,14 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    app.isRotation = YES;
-}
-
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     
-    [self interfaceOrientation:UIInterfaceOrientationPortrait];
+    //关闭旋转
     AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     app.isRotation = NO;
     
+    [self interfaceOrientation:UIInterfaceOrientationPortrait];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

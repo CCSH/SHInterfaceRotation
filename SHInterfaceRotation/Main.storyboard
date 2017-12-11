@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G9O-ov-8wb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bhz-2b-xA5">
+            <objects>
+                <navigationController id="G9O-ov-8wb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S2y-Et-UFH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YsI-u8-mdF" kind="relationship" relationship="rootViewController" id="biM-Mc-buV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8n-yn-WF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-751" y="110"/>
+        </scene>
+        <!--主界面-->
+        <scene sceneID="0iA-fQ-egE">
+            <objects>
+                <viewController id="YsI-u8-mdF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S5L-z0-KfC"/>
+                        <viewControllerLayoutGuide type="bottom" id="6y0-l4-mSB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kex-Tf-uxH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPj-pc-mYq">
+                                <rect key="frame" x="170" y="164" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Cf-AG-YW3"/>
+                                    <constraint firstAttribute="width" constant="35" id="PRy-ca-r9l"/>
+                                </constraints>
+                                <state key="normal" title="Push"/>
+                                <connections>
+                                    <segue destination="Cma-Dl-LPm" kind="push" id="amb-gj-ei5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6V6-wU-btS">
+                                <rect key="frame" x="166" y="294" width="43" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aZc-b7-aE4"/>
+                                    <constraint firstAttribute="width" constant="43" id="bgy-8v-Wev"/>
+                                </constraints>
+                                <state key="normal" title="Model"/>
+                                <connections>
+                                    <segue destination="CId-4p-ifu" kind="modal" id="CrA-w5-FDB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KPj-pc-mYq" firstAttribute="centerX" secondItem="Kex-Tf-uxH" secondAttribute="centerX" id="VEI-VP-Nc1"/>
+                            <constraint firstItem="KPj-pc-mYq" firstAttribute="top" secondItem="S5L-z0-KfC" secondAttribute="bottom" constant="100" id="cuv-3r-XMl"/>
+                            <constraint firstItem="6V6-wU-btS" firstAttribute="top" secondItem="KPj-pc-mYq" secondAttribute="bottom" constant="100" id="rox-M0-Mqa"/>
+                            <constraint firstItem="6V6-wU-btS" firstAttribute="centerX" secondItem="Kex-Tf-uxH" secondAttribute="centerX" id="xU0-6O-rLU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="主界面" id="RPD-cn-lyn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hF9-eE-NZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60" y="89"/>
+        </scene>
+        <!--Model View Controller-->
+        <scene sceneID="f34-1I-COF">
+            <objects>
+                <viewController id="CId-4p-ifu" customClass="ModelViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G4R-UK-fEQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="QzE-wN-QAv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OK9-QH-qsD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-Z6-mMg">
+                                <rect key="frame" x="165" y="318" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="1Tq-sY-qdJ"/>
+                                    <constraint firstAttribute="height" constant="30" id="SOX-Tf-tdO"/>
+                                </constraints>
+                                <state key="normal" title="旋转"/>
+                                <connections>
+                                    <action selector="btnClick:" destination="CId-4p-ifu" eventType="touchUpInside" id="gej-tx-MKn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LRr-Z6-mMg" firstAttribute="centerY" secondItem="OK9-QH-qsD" secondAttribute="centerY" id="VrB-0k-ilk"/>
+                            <constraint firstItem="LRr-Z6-mMg" firstAttribute="centerX" secondItem="OK9-QH-qsD" secondAttribute="centerX" id="oil-FR-VIO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftg-Q6-Id5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="836" y="496"/>
+        </scene>
+        <!--Push旋转界面-->
+        <scene sceneID="UUP-bp-Gpf">
+            <objects>
+                <viewController id="Cma-Dl-LPm" customClass="PushViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bkb-Qa-nQn"/>
+                        <viewControllerLayoutGuide type="bottom" id="N1w-ul-z02"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="svy-gA-twZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtn-IK-sHb">
+                                <rect key="frame" x="172" y="318.5" width="31" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="pUS-QQ-vDZ"/>
+                                    <constraint firstAttribute="height" constant="30" id="tVT-q0-TCQ"/>
+                                </constraints>
+                                <state key="normal" title="旋转"/>
+                                <connections>
+                                    <action selector="btnClick:" destination="Cma-Dl-LPm" eventType="touchUpInside" id="qdc-pg-RKl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jtn-IK-sHb" firstAttribute="centerY" secondItem="svy-gA-twZ" secondAttribute="centerY" id="RjW-9B-nZN"/>
+                            <constraint firstItem="jtn-IK-sHb" firstAttribute="centerX" secondItem="svy-gA-twZ" secondAttribute="centerX" id="jZ8-fD-0hD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Push旋转界面" id="e53-fD-Sli"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAi-yx-BF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="847" y="-176"/>
+        </scene>
+    </scenes>
+</document>
